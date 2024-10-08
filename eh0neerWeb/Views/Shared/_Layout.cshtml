@@ -9,41 +9,90 @@
     <link rel="stylesheet" href="~/eh0neerWeb.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">eh0neerWeb</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">eh0neerWeb</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+<footer id="footer-nav" class="site-footer">
+    <div class="container">
+        <div class="row">
+            <!-- Информация о сайте -->
+            <div class="col-md-3 col-md-push-9">
+                <div class="footer-site-info">
+                    2024 © <a href="/" target="_self">Андрей - "eh0neer"</a>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - eh0neerWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <!-- Навигация -->
+            <div class="col-md-6">
+                <nav id="footer-navigation" class="site-navigation footer-navigation centered-box" role="navigation">
+                    <ul id="footer-menu" class="nav-menu styled clearfix inline-inside">
+                        <li class="menu-item">
+                            <a href="/">Главная</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/articles">Статьи</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/news">Наши новости</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/#contact">Контакты</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/privacy-policy">Политика конфиденциальности</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Социальные сети -->
+            <div class="col-md-3 col-md-pull-9">
+                <div id="footer-socials">
+                    <div class="socials inline-inside socials-colored">
+                        <a href="@Model.Contact.TelegramUrl" target="_blank">
+                            <img src="/Resources/telegram-icon.png" alt="Telegram" class="contact-icon" />
+                        </a>
+                        <a href="mailto:@Model.Contact.Email">
+                            <img src="/Resources/email-icon.png" alt="Email" class="contact-icon"/>
+                        </a>
+                        <a href="@Model.Contact.HhUrl" target="_blank">
+                            <img src="/Resources/hh-icon.png" alt="hh.ru" class="contact-icon"/>
+                        </a>
+                        <a href="@Model.Contact.GitHubUrl" target="_blank">
+                            <img src="/Resources/github-icon.png" alt="github.com" class="contact-icon"/>
+                        </a>
+                        <!-- <a href="@Model.Contact.LinkedInUrl" target="_blank">
+                            <img src="/Resources/linkedin-icon.png" alt="LinkedIn" class="contact-icon"/>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    </div>
+</footer>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

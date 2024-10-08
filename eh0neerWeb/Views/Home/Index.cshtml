@@ -1,8 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "eh0neer";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="personal-info">
+        <img src="@Model.PersonalInfo.PhotoUrl" alt="@Model.PersonalInfo.FullName" class="profile-photo"/>
+        <h1>@Model.PersonalInfo.FullName</h1>
+        <p>@Model.PersonalInfo.Occupation</p>
+        <p>@Model.PersonalInfo.Bio</p>
+    </div>
+
+    <div class="projects">
+        <h2>Мои проекты</h2>
+        @foreach (var project in Model.Projects)
+        {
+        <div class="project">
+            <h3>@project.Title</h3>
+            <p>@project.Description</p>
+            <img src="@project.ScreenshotUrl" alt="@project.Title" class="project-screenshot"/>
+            <pre>@project.CodeSnippet</pre>
+            <a href="@project.ProjectUrl" target="_blank">Посмотреть проект</a>
+        </div>
+        }
+    </div>
+
+    <div class="skills">
+        <h2>Мои навыки</h2>
+        <ul>
+            <li>C#</li>
+            <li>.NET</li>
+            <li>JavaScript</li>
+            <li>HTML/CSS</li>
+            <li>SQL</li>
+            <li>Docker</li>
+            <li>Avalonia</li>
+            <li>ASP.NET Core</li>
+        </ul>
+    </div>
+    <div class="additional-info">
+        <h2>Дополнительная информация</h2>
+        <p>Здесь вы можете добавить дополнительную информацию о себе, своих хобби или других интересах.</p>
+        <p>Например, упомяните о своих любимых книгах, фильмах или о том, как вы проводите свободное время.</p>
+    </div> 
+    
 </div>
+

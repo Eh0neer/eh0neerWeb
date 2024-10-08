@@ -1,3 +1,24 @@
+html, body {
+  height: 100%; /* Убедитесь, что html и body занимают 100% высоты */
+  margin: 0; /* Уберите отступы */
+}
+
+body {
+  display: flex; /* Используйте Flexbox */
+  flex-direction: column; /* Устанавливаем вертикальную ориентацию */
+}
+
+.container {
+  flex: 1; /* Этот элемент занимает все доступное пространство */
+}
+
+.site-footer {
+  background-color: #333;
+  padding: 40px 0;
+  color: #fff;
+  text-align: center; /* Центрирование текста футера */
+}
+
 html {
   font-size: 14px;
 }
@@ -8,15 +29,51 @@ html {
   }
 }
 
+.contact-icon {
+  width: 30px;   /* Ширина иконки */
+  height: 30px;  /* Высота иконки */
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+#footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
 }
 
-body {
-  margin-bottom: 60px;
+#footer-menu .menu-item {
+  display: inline;
+  margin-right: 20px;
+}
+
+#footer-menu .menu-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#footer-menu .menu-item a:hover {
+  text-decoration: underline;
+}
+
+#footer-socials {
+  text-align: right;
+}
+
+.socials {
+  display: inline-flex;
+  gap: 15px;
+}
+
+.footer-site-info {
+  text-align: left;
+  font-size: 14px;
+}
+
+.footer-site-info a {
+  color: #ffcc00;
 }
