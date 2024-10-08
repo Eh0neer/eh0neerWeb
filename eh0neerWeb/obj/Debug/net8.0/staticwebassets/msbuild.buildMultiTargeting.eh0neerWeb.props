@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\eh0neerWeb.props" />
-</Project>
